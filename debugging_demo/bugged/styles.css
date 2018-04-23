@@ -1,5 +1,4 @@
-/*universal selector (targets all elements) */
-*{
+p{
  font-size: 15px;   
 }
 urgent{
