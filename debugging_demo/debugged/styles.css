@@ -1,0 +1,21 @@
+/*universal selector (targets all elements)*/
+*{
+ font-size: 15px;   
+}
+.urgent{
+    color: red;
+}
+.really-urgent{
+    color: orange;
+    font-size: 30px;
+}
+#most-urgent{
+    color: orange;
+    font-size: 45px;
+}
+.silver{
+    color: silver;
+}
+.blue{
+    color: blue;
+}
