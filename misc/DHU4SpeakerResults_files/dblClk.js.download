@@ -1,0 +1,16 @@
+var numClicks = 0;
+
+function checkClicks(){
+    if (numClicks == 0){
+        numClicks = numClicks + 1;
+        return true;
+    }
+    else {
+        alert("Your request is being processed.  Thank you for your patience.");
+        return false;
+    }
+}
+
+function clearClicks(){
+    numClicks = 0;
+}

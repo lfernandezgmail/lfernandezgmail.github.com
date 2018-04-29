@@ -1,0 +1,83 @@
+function showTab(obj) {
+	if (obj.getAttribute('id') == selectedTab.getAttribute('id')) return false;
+	obj.className='selected';
+	var content=document.getElementById(obj.getAttribute('id') + 'Content');
+	content.style.display='block';
+	selectedTab.className='';
+	content=document.getElementById(selectedTab.getAttribute('id') + 'Content');
+	content.style.display='none';
+	selectedTab = obj;
+}
+function showSubTab(obj) {
+	if (obj.getAttribute('id') == selectedSubTab.getAttribute('id')) return false;
+	obj.className='selected';
+	var content=document.getElementById(obj.getAttribute('id') + 'Content');
+	if (content)
+		content.style.display='block';
+	selectedSubTab.className='';
+	content=document.getElementById(selectedSubTab.getAttribute('id') + 'Content');
+	if (content)
+		content.style.display='none';
+	selectedSubTab = obj;
+}
+function goTabLocation(tab, url) {
+	if (tab.className != 'selected')
+		window.location=url;
+}
+function showLoading(id) {
+	document.getElementById(id).innerHTML = '<div class="loading">loading . . . <img alt="please wait" src="/images/interface/loading.gif"></div>';
+}
+/* graphical tab behaviors */
+function over(tab) {
+	if (tab.id.substr(1) != selectedTabNum)
+		tab.className = "tab over";
+}
+function out(tab) {
+	if (tab.id.substr(1) != selectedTabNum)
+		tab.className = "tab B";
+}
+function ct(tab, name) {
+	var newSelectedTabNum = tab.id.substr(1);
+	if (newSelectedTabNum != selectedTabNum) {
+		document.getElementById('t'+ selectedTabNum).className = "tab B";
+		document.getElementById('t'+ selectedTabNum +'L').className = "tab "+(selectedTabNum=='1'?'BL':(Number(selectedTabNum) < Number(newSelectedTabNum)?'BI':'BD'));
+		document.getElementById('t'+ (Number(selectedTabNum)+1) +'L').className = "tab "+(selectedTabNum==tabs?'BR':(Number(selectedTabNum) < Number(newSelectedTabNum)?'BI':'BD'));
+		tab.className = "tab F";
+		document.getElementById('c'+ selectedTabNum).style.display='none';
+		document.getElementById('t'+ newSelectedTabNum +'L').className = "tab "+(newSelectedTabNum==1?'FL':'FI');
+		document.getElementById('t'+ (Number(newSelectedTabNum)+1) +'L').className = "tab "+(newSelectedTabNum==tabs?'FR':'FD');
+		document.getElementById('c'+ newSelectedTabNum).style.display='block';
+		selectedTabNum=newSelectedTabNum;
+
+	}
+}
+/* graphical subtab behaviors */
+function sover(tab) {
+	if (tab.id.substr(tab.id.indexOf("_")+2) != eval(tab.id.substr(0,tab.id.indexOf("_")) + '.selectedTabNum'))
+		tab.className = "tab over";
+}
+function sout(tab) {
+	if (tab.id.substr(tab.id.indexOf("_")+2) != eval(tab.id.substr(0,tab.id.indexOf("_")) + '.selectedTabNum'))
+		tab.className = "tab B";
+}
+function cst(tab) {
+	var selectedSubTabNum = eval(tab.id.substr(0,tab.id.indexOf("_")) + '.selectedTabNum');
+	if (selectedSubTabNum == undefined) selectedSubTabNum=1;
+	var newSelectedTabNum = tab.id.substr(tab.id.indexOf("_")+2);
+	var id = tab.id.substr(0,tab.id.indexOf("_"));
+	var tabs = eval(tab.id.substr(0,tab.id.indexOf("_")) + '.subTabs');
+	if (newSelectedTabNum != selectedSubTabNum) {
+		document.getElementById(id +'_t'+ selectedSubTabNum).className = "tab B";
+		document.getElementById(id +'_t'+ selectedSubTabNum +'L').className = "tab "+(selectedSubTabNum=='1'?'BL':(Number(selectedSubTabNum) < Number(newSelectedTabNum)?'BI':'BD'));
+		document.getElementById(id +'_t'+ (Number(selectedSubTabNum)+1) +'L').className = "tab "+(selectedSubTabNum==tabs?'BR':(Number(selectedSubTabNum) < Number(newSelectedTabNum)?'BI':'BD'));
+		tab.className = "tab F";
+		selectedSubTabContent = document.getElementById(id +'_c'+ selectedSubTabNum);
+		if (selectedSubTabContent) selectedSubTabContent.style.display='none';
+		document.getElementById(id +'_t'+ newSelectedTabNum +'L').className = "tab "+(newSelectedTabNum==1?'FL':'FI');
+		document.getElementById(id +'_t'+ (Number(newSelectedTabNum)+1) +'L').className = "tab "+(newSelectedTabNum==tabs?'FR':'FD');
+		newSelectedSubTabContent = document.getElementById(id +'_c'+ newSelectedTabNum);
+		if (newSelectedSubTabContent) newSelectedSubTabContent.style.display='block';
+		eval(tab.id.substr(0,tab.id.indexOf("_")) + '.selectedTabNum='+newSelectedTabNum);
+	}
+}
+

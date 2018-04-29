@@ -1,0 +1,261 @@
+body {
+	margin:0 0 0 0;
+	background:#E1E6E8;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#head h1 {
+	position:relative;
+	z-index:10;
+	font-family:Georgia,serif;
+	font-size:24px;
+	margin:0px 0px 4px 20px;
+	padding:2px 0 0 0;
+	color:#4D6F80;
+	white-space:nowrap;
+	text-shadow:gray 2px 2px 3px;
+}
+#head h1 .firstWord {
+	letter-spacing:4px;
+	position:relative;
+	font-style:italic;
+}
+div#chi {
+	font-family: Times, "Times New Roman", serif;
+	position:absolute;
+	z-index:5;
+	margin:-21px 0 0 20px;
+	font-size:48px;
+	color:#CAD0BD;
+}
+#head #version {
+	float:right; 
+    color:#7DA1B3;
+	margin:3px 1em 0 0;
+	position:absolute;
+	top:12px; 
+	left:166px;
+	font-size:11px;
+}
+h2 {
+	margin:0px 0px 0px 0px;
+	padding:0px;
+	font-size:133%;
+	white-space:nowrap;
+}
+h3 {
+	color:#00334D;
+	margin-bottom:0px;
+	margin-top:7px;
+	font-size:120%;
+}
+#headLinks {
+	position: absolute;
+	right: 20px;
+	margin: 5px 0 0 0;
+	z-index: 11;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#help {
+	border-right: 2px solid rgb(170, 170, 170);
+	color: rgb(170, 170, 170);
+	font-size: 120%;
+	float: right;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+#loginInfo {
+	float: right;
+    cursor: pointer;
+}
+#loggedInAs {
+    white-space:nowrap;
+    font-size: 120%;
+    color: rgb(95, 95, 95);
+}
+#loggedInAs:hover {
+    color: rgb(70, 70, 70);
+}
+#loggedInAs:focus, div#loggedInAs.active {
+    outline: none;
+    color: black;
+}
+#loggedInAs #username {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#loginDropdownArrow {
+    display: inline-block;
+    position: relative;
+    margin-left: 4px;
+    width: 0; 
+	height: 0;
+    border-top: 5px solid #404040;
+    border-left: 5px dashed transparent;
+    border-right: 5px dashed transparent;
+    vertical-align: middle;
+}
+#loginDropdownBox {
+    display:none;
+    cursor: default;
+    width:180px;
+    position:absolute;
+    top:36px;
+    right:-6px;
+    z-index:9999;
+    font-size: 90%;
+    background-color:rgb(234,234,234);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5); 
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5); 
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    filter:
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=0,strength=1),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=45,strength=1),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=90,strength=2),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=135,strength=3),
+          progid:DXImageTransform.Microsoft.Shadow(color=#cccccc,direction=180,strength=10),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=225,strength=3),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=270,strength=2),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=315,strength=1);
+}
+#loginDropdownBox #boxArrow {
+    position: absolute;
+    top: -7.5px;
+    right: 3px;
+    width:15px;
+    height:15px;
+    background-color: inherit;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    box-shadow: -5px -5px 6px -2px rgba(0,0,0,0.25);
+}
+#loginDropdownBox #usernameRow {
+    text-align: center;
+    color: rgb(155,155,155);
+    border-bottom: 1px solid rgb(218,218,218);
+    font-size: 85%;
+    padding: 12px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#loginDropdownBox #usernameRow:focus {
+    outline: none;
+}
+#loginDropdownBox ul, #loginDropdownBox ul li {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0;
+}
+.accountDropdownButton {
+    box-sizing: border-box;
+    padding: 10px 0 10px 15px;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(245,245,245);
+    cursor: default;
+}
+.accountDropdownButton:focus {
+    outline: none;
+    background-color: rgb(223, 223, 223);
+}
+#accountButtonsSection {
+    margin: 0;
+}
+#logOutSection {
+    bottom:0;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+#head {
+	background-color:#D3DFE5;
+	height:72px;
+	background-image: url(/images/interface/testingCenterStudentsHeadBg.jpg);
+	background-repeat: repeat-x;
+}
+#head #pathbar {
+	position:absolute;
+	top:40px;
+	width:100%;
+	height: 16px;
+	border-top:#6AA6C3 2px solid;
+	border-bottom:#004A70 2px solid;
+	background-color:#006699;
+	font-size:13px;
+	color:white;
+	z-index:20;
+}
+#head #pathbar a {
+	color:white;
+	text-decoration:none;
+}
+#head #pathbar a:hover {
+	color:rgb(191,217,229);
+	text-decoration:underline;
+}
+.breadcrumbs {
+	float:left;
+	clear:both;
+	margin-bottom:10px;
+}
+.breadcrumbs div {
+	background:#DADFE0;
+	border: 1px solid #B5BABB;
+	border-radius: 5px;
+	padding: 5px 15px;
+    font-size: 90%;
+}
+#content {
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:74px;
+	padding:7px 2% 7px 2%;
+}
+ul {
+	margin-left:1em;
+	padding-left:0.5em;
+	margin-top:0em;
+}
+li {
+	margin-top:0.2em;
+	font-size:105%;
+	margin-left:0em;
+}
+ul p {
+	font-size:80%;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+form {
+	margin:0;
+}
+.important {
+	font-weight:bold;
+	color:#990033;
+}
+.loading {
+	font-size:22px;
+	text-align:center;
+	color:rgb(102, 102, 102);
+	padding-top:80px;
+}
+.loading img {
+	position:relative;
+	top:6px;
+	width:27px;
+	height:27px;
+}
+@media print {
+	#printbtn{
+		display:none;
+	}
+}

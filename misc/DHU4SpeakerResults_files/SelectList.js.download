@@ -1,0 +1,232 @@
+function SelectList(id, multiple, expandContract) {
+	/* Constructor */
+	this.id=id;
+	this.list={};
+	this.selectedItems = new Array();
+	this.selectedGroup = null;
+	this.canSelectOnlyOneItem = (multiple!='multiple');
+	this.expandedByDefault = (expandContract!='contracted');
+	this.keysPressed=0;
+	this.searches = [];
+	this.submittable = true;
+	this.selectedSubTab;
+}
+
+SelectList.prototype.gec = function(obj, e) {  // gec = Group Expand or Contract
+	var contents;
+	contents = document.getElementById(this.id +'_'+ obj.parentNode.getAttribute('row') +'contents');
+	if (!contents) contents = document.getElementById(this.id +'_'+ obj.parentNode.parentNode.getAttribute('row') +'contents');
+	if (obj.src.indexOf('contract') < 0) {
+		contents.style.display = 'block';
+		obj.src = '/images/interface/contract.gif';
+	}
+	else {
+		contents.style.display = 'none';
+		obj.src = '/images/interface/expand.gif';
+	}
+	if (!e) var e = window.event;
+	e.cancelBubble = true;
+	if (e.stopPropagation) e.stopPropagation();
+}
+SelectList.prototype.cg = function(obj) { // cg = click group
+	var row = obj.getAttribute('row');
+	if (objectSelected(obj)) {
+		unselectObject(obj);
+		this.selectedGroup = null;
+	}
+	else {
+		if (this.selectedGroup != null && this.selectedGroup != obj) unselectObject(this.selectedGroup);
+		selectObject(obj);
+		this.selectedGroup = obj;
+	}
+	for (var i=0; i<this.selectedItems.length; i++)
+		unselectObject(this.selectedItems[i]);
+	this.selectedItems = new Array();
+	this.updateButtons();
+}
+SelectList.prototype.ct = function(obj) { // ct = click item
+	var row = obj.getAttribute('row');
+	if (objectSelected(obj)) {
+		unselectObject(obj);
+		this.removeItemSelection(obj);
+		this.showItemInfo();
+	}
+	else {
+		if (this.canSelectOnlyOneItem && this.selectedItems.length > 0) {
+			unselectObject(this.selectedItems[0]);
+			this.removeItemSelection(this.selectedItems[0]);
+		}
+		selectObject(obj);
+		this.addItemSelection(obj);
+		this.showItemInfo(row);
+	}
+	if (this.selectedGroup != null) {
+		unselectObject(this.selectedGroup);
+		this.selectedGroup = null;
+	}
+	this.outputTestIDs();
+}
+SelectList.prototype.dct = function(obj) { // dct = double-click item
+	for (var i=this.selectedItems.length-1; i>=0; --i)
+		unselectObject(this.selectedItems[i]);
+	this.disableButtons();
+	selectObject(obj);
+	this.addItemSelection(obj);
+	this.outputTestIDs();
+	this.setEvent('beginTest', 'testing');
+	for (var f=0; f<document.forms.length; f++) {
+		if (document.forms[f].action.indexOf("testing") != -1) {
+			document.forms[f].submit();
+			return true;
+		}
+	}
+	document.forms[0].submit();
+}
+SelectList.prototype.dcc = function(obj) { // dcg = double-click group
+	for (var i=this.selectedItems.length-1; i>=0; --i)
+		unselectObject(this.selectedItems[i]);
+	this.disableButtons();
+	selectObject(obj);
+	this.setEvent('default', '');
+	document.forms[0].submit();
+}
+SelectList.prototype.addItemSelection = function(obj) {
+	var itemNotFound = true;
+	var row = obj.getAttribute('row');
+	for (var i=0; i<this.selectedItems.length; i++)
+		if (this.list.id[this.selectedItems[i].getAttribute('row')] == this.list.id[row])
+			itemNotFound = false;
+	if (itemNotFound) {
+		this.selectedItems[this.selectedItems.length] = obj;
+	}
+}
+SelectList.prototype.removeItemSelection = function(obj) {
+	var row = obj.getAttribute('row');
+	for (var i=this.selectedItems.length-1; i>=0; i--)
+		if (this.list.id[this.selectedItems[i].getAttribute('row')] == this.list.id[row] || this.selectedItems[i] == null)
+			this.selectedItems.splice(i, 1);
+	while (this.selectedItems[this.selectedItems.length-1] == null && this.selectedItems.length > 0) this.selectedItems.pop();
+}
+SelectList.prototype.clearSelections = function() {
+	this.selectedItems = new Array();
+	this.selectedGroup = null;
+	this.updateButtons();
+}
+
+objectSelected = function(obj) {
+	return (obj.className.indexOf('Selected') > 0)
+}
+selectObject = function(obj) {
+	if (!objectSelected(obj))
+		obj.className = (obj.className + 'Selected');
+}
+unselectObject = function(obj) {
+	if (objectSelected(obj))
+		obj.className = obj.className.substring(0, obj.className.indexOf('Selected'));
+}
+
+/* The following functions should be overridden to implement each instance */
+
+SelectList.prototype.search = function() {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.updateList = function(list) {
+	if (list != undefined)
+		this.list=list;
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.showItemInfo = function(row) {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.updateButtons = function() {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.disableButtons = function() {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.outputTestIDs = function() {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.setEvent = function(event, section) {
+	/* This function should be overridden for each instance */
+}
+
+
+SelectList.prototype.isSubmittable = function() {
+	return this.submittable;
+}
+SelectList.prototype.makeSubmittable = function(canBeSubmitted) {
+	this.submittable = canBeSubmitted;
+	return true;
+}
+SelectList.prototype.findExistingSearch = function(criteria) {
+	for (s=0; s < this.searches.length; s++) {
+		if (this.searches[s].criteria == criteria.substr(0, this.searches[s].criteria) && this.searches[s].criteria <= criteria.length) {
+			return s;
+		}
+		return undefined;
+	}
+}
+SelectList.prototype.confirmSearch = function() {
+	var criteria = document.getElementById(this.id+'_criteria').value;
+	if (criteria.length <= 4) {
+		var doSearch = window.confirm("You have entered only " + criteria.length + " characters. This could return a long list of results. Continue?");
+		if (doSearch)
+			this.searchFor(criteria);
+	} else {
+		this.keysPressed++;
+		this.searchFor(criteria);
+	}
+	this.makeSubmittable(false);
+}
+SelectList.prototype.criteriaKeyPressed = function(e) {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.criteriaChanged = function(keyCount) {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.filterSearchResults = function(list, criteria) {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.searchFor = function(criteria) {
+	/* This function should be overridden for each instance */
+}
+SelectList.prototype.showSubTab = function(obj) {
+	if (obj.getAttribute('id') == this.selectedSubTab.getAttribute('id')) return false;
+	obj.className='selected';
+	var content=document.getElementById(obj.getAttribute('id') + 'Content');
+	if (content)
+		content.style.display='block';
+	this.selectedSubTab.className='';
+	content=document.getElementById(this.selectedSubTab.getAttribute('id') + 'Content');
+	if (content)
+		content.style.display='none';
+	this.selectedSubTab = obj;
+}
+
+function isNumeric(str) {
+	for (cnum=0; cnum<str.length; cnum++)
+		if (str.charCodeAt(cnum)>57 || str.charCodeAt(cnum)<48)
+			return false;
+	return true;
+}
+function scoreReductionDate(aDate, reductionTime) {
+	if (aDate == undefined || aDate == '') return '';
+	var theDate = new Date(aDate);
+	theDate = new Date(theDate - reductionTime*60000);
+	return (theDate.getMonth()+1).toString() + '/' + theDate.getDate() + '/' + theDate.getFullYear() + ' ' +
+		(theDate.getHours()%12 == 0?'12':(theDate.getHours() % 12).toString()) + ':' +
+		(theDate.getMinutes()<=9?'0'+theDate.getMinutes():theDate.getMinutes()) + '&nbsp;' +
+		(theDate.getHours() >= 12? 'PM':'AM');
+}
+function shortDate(aDate) {
+	if (aDate == undefined || aDate == '') return '';
+	var theDate = new Date(aDate);
+	return (theDate.getMonth()+1).toString() + '/' + theDate.getDate() + '/' + theDate.getFullYear();
+}
+function shortTime(aDate) {
+	if (aDate == undefined || aDate == '') return '';
+	var theDate = new Date(aDate);
+	return (theDate.getHours()%12 == 0?'12':(theDate.getHours() % 12).toString()) + ':' + (theDate.getMinutes()<=9?'0'+theDate.getMinutes():theDate.getMinutes()) + '&nbsp;' + (theDate.getHours() >= 12? 'PM':'AM');
+}
+

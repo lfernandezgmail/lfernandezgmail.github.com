@@ -1,0 +1,325 @@
+.outerBorder {
+	border-style: solid;
+	border-color: rgb(201, 200, 197) rgb(239, 239, 236) rgb(248, 248, 247) rgb(210, 209, 206);
+	border-width: 1px;
+	margin-bottom: 40px;
+}
+.innerBorder {
+	border-style: solid;
+	border-color: rgb(253, 253, 252) rgb(226, 226, 222) rgb(218, 217, 213) rgb(252, 251, 248);
+	border-width: 1px;
+	padding: 5px 15px;
+}
+h3 {
+	color: rgb(46, 66, 77);
+	font-size: 110%;
+	clear: left;
+}
+p {
+	margin-top: 2px;
+}
+table.overallStatistics {
+	font-size: 90%;
+	width: 100%;
+	margin-bottom: 12px;
+}
+th { text-align: left }
+div.distribution {
+	position: relative;
+	float: left;
+	margin-bottom: 5px;
+	width: 50%;
+}
+h4 {
+	margin-top: 0pt;
+	font-size: 90%;
+}
+div.distribution h4 { margin-left: 24px }
+div.distribution div.graph {
+	border: 1px solid rgb(189, 188, 183);
+	background-color: rgb(255, 255, 255);
+	margin-right: 5px;
+	height: 70px;
+	margin-left: 25px;
+}
+div.graph div.bar {
+	border-left: 1px solid rgb(201, 212, 217);
+	border-top-color: rgb(136, 159, 170);
+	float: left;
+	background-color: rgb(77, 111, 128);
+	margin-left: -1px;
+}
+sub {
+	font-size: 65%;
+	vertical-align: -20%;
+}
+div.q {
+	padding-left: 22px;
+	text-indent: -22px;
+	color: rgb(0,50,77);
+}
+div.options {
+	padding-left: 22px;
+	margin-top: 5px;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+div.options table {
+	text-align: left;
+	width: 100%;
+	font-size: 80%;
+}
+div.options table tr.odd { 
+	background-color: #F3F5F6;
+}
+div.options div.bL {
+	border-right: 1px solid rgb(0, 0, 0);
+	float: left;
+	width: 34%;
+}
+div.options div.bR {
+	width: 66%;
+	margin-left: 34%;
+}
+
+
+.odd .dif .bL { background-color: rgb(216, 206, 212) }
+.odd .disc .bL { background-color: rgb(216, 216, 202) }
+.odd .ptB .bL { background-color: rgb(206, 206, 207) }
+.even .dif .bL { background-color: rgb(235, 224, 230) }
+.even .disc .bL { background-color: rgb(235, 234, 220) }
+.even .ptB .bL { background-color: rgb(225, 224, 225) }
+
+
+div.options div.label {
+	color: rgb(153, 0, 0);
+	text-align: right;
+	float: left;
+	width: 1px;
+	position: relative;
+	white-space: nowrap;
+	z-index: 3;
+}
+div.b01, div.b02, div.b03, div.b04, div.b05, div.b06, div.b07, div.b08, div.b09, div.b10, div.b-07 {
+	border-style: solid;
+	border-width: 1px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	height: 8px;
+}
+div.b01 { background-color: rgb(255, 0, 0); width: 10% }
+div.b02 { background-color: rgb(173, 82, 0); width: 20% }
+div.b03 { background-color: rgb(138, 117, 0); width: 30% }
+div.b04 { background-color: rgb(107, 148, 0); width: 40% }
+div.b05 { background-color: rgb(79, 176, 0); width: 50% }
+div.b06 { background-color: rgb(56, 199, 0); width: 60% }
+div.b07 { background-color: rgb(36, 219, 0); width: 70% }
+div.b08 { background-color: rgb(20, 235, 0); width: 80% }
+div.b09 { background-color: rgb(8, 247, 0); width: 90% }
+div.b10 { background-color: rgb(0, 255, 0); width: 99% }
+div.b0 {
+	border: 1px solid rgb(153, 153, 153);
+	width: 1px;
+	height: 8px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.odd .dif .b0 { border-color: rgb(216, 206, 212) }
+.odd .disc .b0 { border-color: rgb(216, 216, 202) }
+.odd .ptB .b0 { border-color: rgb(206, 206, 207) }
+.even .dif .b0 { border-color: rgb(235, 224, 230) }
+.even .disc .b0 { border-color: rgb(235, 234, 220) }
+.even .ptB .b0 { border-color: rgb(225, 224, 225) }
+div.bL div.b0 {
+	float: right;
+	position: relative;
+	z-index: -1;
+}
+div.b-01, div.b-02, div.b-03, div.b-04, div.b-05, div.b-06, div.b-07, div.b-08, div.b-09, div.b-10 {
+	background-color: rgb(255, 0, 0);
+	float: right;
+	position: relative;
+	left: 1px;
+}
+div.b-01 { width: 10% }
+div.b-02 { width: 20% }
+div.b-03 { width: 30% }
+div.b-04 { width: 40% }
+div.b-05 { width: 50% }
+div.b-06 { width: 60% }
+div.b-07 { width: 70% }
+div.b-08 { width: 80% }
+div.b-09 { width: 90% }
+div.b-10 { width: 99% }
+th.hits, th.dif, th.disc, th.ptB {
+	border-left: 1px solid rgb(255, 255, 255);
+	border-right: 1px solid rgb(200, 199, 196);
+	text-align: center;
+}
+th.hits { background-color: rgb(225, 234, 220) }
+th.dif { background-color: rgb(235, 224, 230) }
+th.disc { background-color: rgb(235, 234, 220) }
+th.ptB { background-color: rgb(225, 224, 225) }
+td.hits, td.dif, td.disc, td.ptB {
+	border-left: 1px solid rgb(255, 255, 255);
+	border-right: 1px solid rgb(200, 199, 196);
+}
+td.hits { text-align: center }
+tr.odd td.hits { background-color: rgb(206, 216, 202) }
+tr.odd td.dif { background-color: rgb(216, 206, 212) }
+tr.odd td.disc { background-color: rgb(216, 216, 202) }
+tr.odd td.ptB { background-color: rgb(206, 206, 207) }
+tr.even td.hits { background-color: rgb(225, 234, 220) }
+tr.even td.dif { background-color: rgb(235, 224, 230) }
+tr.even td.disc { background-color: rgb(235, 234, 220) }
+tr.even td.ptB { background-color: rgb(225, 224, 225) }
+
+div#scoreInfo, div#durationInfo {
+	text-align: center;
+	width: 40%;
+	margin-left: 5%;
+	margin-right: 5%;
+	float: left;
+	margin-bottom: 10px;
+	background-color: rgb(206, 216, 202)
+}
+
+.leftFill{
+	width: 30px;
+	text-align: center;
+	margin-top: 15px;
+	vertical-align: top;
+}
+
+.aChoice{
+	text-align: left;
+	vertical-align: top;
+	width: 90%;
+	padding-left: 10px;
+	margin-top: 15px;
+	height: 45px;
+}
+
+.subChoice{
+	margin-left: 50px;
+	margin-top: 5px;
+}
+
+.subChoiceButton{
+	width: 30px;
+	text-align: center;
+	vertical-align: top;
+	float: left;
+}
+
+.subChoiceText{
+	text-align: left;
+	vertical-align: top;
+	width: 300px;
+	padding-left: 10px;
+	float: left;
+}
+
+.clearDiv{
+	clear: left;
+}	
+
+.choice1 {
+	text-align: left;
+	vertical-align: top;
+	width: 28%;
+	padding-left: 20px;
+}
+
+.choice2 {
+	text-align: left;
+	vertical-align: top;
+	width: 49%;
+}
+
+.choice3 {
+	text-align: left;
+	vertical-align: top;
+	width: 23%;
+}
+
+#printbtn{
+	float:right;
+}
+@media print {
+	#printbtn{
+		display:none;
+	}
+
+/* Style defined HTML in questions */
+.q h1 {
+	display: block;
+	font-size: 2em;
+	margin-top: 0.67em;
+	margin-bottom: 0.67em;
+	font-weight: bold;
+	color: #00324D;
+}
+.q h2 {
+	display: block;
+	font-size: 1.5em;
+	margin-top: 0.83em;
+	margin-bottom: 0.83em;
+	font-weight: bold;
+	color: #00324D;
+}
+.q h3 {
+	display: block;
+	font-size: 1.17em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-weight: bold;
+	color: #00324D;
+}
+.q h4 {
+	display: block;
+	margin-top: 1.33em;
+	margin-bottom: 1.33em;
+	font-weight: bold;
+	color: #00324D;
+}
+.q h5 {
+	display: block;
+	font-size: .83em;
+	margin-top: 1.67em;
+	margin-bottom: 1.67em;
+	font-weight: bold; 
+	color: #00324D;
+}
+.q h6 {
+	display: block;
+	font-size: .67em;
+	margin-top: 2.33em;
+	margin-bottom: 2.33em;
+	font-weight: bold;
+	color: #00324D;
+}
+.q ul {
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left: 0px;
+	padding-left: 40px;
+	text-indent: 0px;
+	color: #00324D;
+}
+.q ol {
+	text-indent: 0px;
+	color: #00324D;
+}
+.q li {
+	font-size: 100%;
+	margin: 0px;
+	text-indent: 0px;
+	color: #00324D;
+}
+.q ul p {
+	font-size: 100%;
+	margin: 0px;
+	color: #00324D;
+}

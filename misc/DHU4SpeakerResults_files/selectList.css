@@ -1,0 +1,277 @@
+.list {       
+	border: 1px solid black;
+	font-family: Arial,Helvetica,sans-serif;
+	width: 60%;
+	overflow: auto;
+    -webkit-overflow-scrolling: touch;
+	position: relative;
+	background-color: white;
+	height:100%;
+	min-height:350px;
+	max-height:350px;
+	max-height:60vh;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.action {
+	font-family: Arial,Helvetica,sans-serif;
+	position: relative;
+	float: right;
+	margin: 25px 0 0 2%;
+}
+.action .instructions {
+	margin-bottom: 22px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	line-height: 17px;
+}
+.action .instructions:first-letter {
+	float: left;
+	width: 30px;
+	font-size: 45px;
+	line-height: 42px;
+	color: rgb(119, 119, 119);
+	font-family: Georgia,Times;
+	font-weight: bold;
+	padding-right: 2px;
+	margin-right: 2px;
+}
+.action .buttons > input { 
+	display: block;
+	margin: 4px auto;
+	width: 100%;
+	max-width: 350px;
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	padding: 6px 10px 6px 10px;
+	border: 1px solid darkGray;
+	text-decoration: none;
+
+	background: #EEEEEE;
+	background: -moz-linear-gradient(top, #EEEEEE 50%, #E9E9E9 50%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#EEEEEE), color-stop(50%,#E9E9E9));
+	background: -webkit-linear-gradient(top, #EEEEEE 50%,#E9E9E9 50%);
+	background: -o-linear-gradient(top, #EEEEEE 50%,#E9E9E9 50%);
+	background: -ms-linear-gradient(top, #EEEEEE 50%,#E9E9E9 50%);
+	background: linear-gradient(to bottom, #EEEEEE 50%,#E9E9E9 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEEEEE', endColorstr='#E9E9E9',GradientType=0 );
+}
+.action .buttons > input:hover:not([disabled]) {
+	background: #E6E6E6;
+	background: -moz-linear-gradient(top, #E6E6E6 50%, #DEDEDE 50%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#E6E6E6), color-stop(50%,#DEDEDE));
+	background: -webkit-linear-gradient(top, #E6E6E6 50%,#DEDEDE 50%);
+	background: -o-linear-gradient(top, #E6E6E6 50%,#DEDEDE 50%);
+	background: -ms-linear-gradient(top, #E6E6E6 50%,#DEDEDE 50%);
+	background: linear-gradient(to bottom, #E6E6E6 50%,#DEDEDE 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E6E6E6', endColorstr='#DEDEDE',GradientType=0 );
+}
+.action .buttons > input:active:not([disabled]) {
+	border: 1px solid #606060;
+}
+.action .buttons > input[disabled=disabled], .action .buttons > input:disabled {
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	filter: alpha(opacity=35);
+	-khtml-opacity: .35;
+	-moz-opacity: .35;
+	opacity: .35;
+}
+.buttons {
+	clear:left;
+	text-align: center;
+}
+.sortButtons {
+	border: 1px solid black;
+	width: 60%;
+	height: 20px;
+	background-color: rgb(153, 153, 153);
+	position: relative;
+	cursor: default
+}
+.sortButtons .col1, .sortButtons .col2, .sortButtons .col3, .sortButtons .col4, .sortButtons .col5 {
+	border-top: 1px solid rgb(153, 153, 153);
+	border-bottom: 1px solid rgb(153, 153, 153);
+	height: 17px;
+	float: left;
+	background-color: rgb(153, 153, 153);
+}
+.sortButtons .selected, .sortButtons .unselected {
+	border-style: solid;
+	border-width: 1px;
+	margin: 0px 1px;
+	padding: 0px 3px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	height: 15px;
+	white-space: nowrap;
+}
+.sortButtons .selected {
+	border-color: black white white black;
+	background-color: rgb(191, 187, 178);
+}
+.sortButtons .unselected {
+	border-color: white black black white;
+	background-color: rgb(212, 207, 197);
+}
+.list { clear: left; cursor: default }
+.list .groupNameOdd, .list .groupNameEven, .list .groupNameOddSelected, .list .groupNameEvenSelected {
+	border-style: solid;
+	border-width: 1px;
+	font-weight: bold;
+	height: 19px;
+	white-space: nowrap;
+}
+.list .groupNameOdd {
+	border-color: rgb(229, 229, 229);
+	background-color: rgb(229, 229, 229);
+}
+.list .groupNameEven {
+	border-color: white;
+	background-color: white;
+}
+.list .groupNameOddSelected {
+	border-color: rgb(0, 102, 153);
+	background-color: rgb(114, 165, 191);
+}
+.list .groupNameEvenSelected {
+	border-color: rgb(0, 102, 153);
+	background-color: rgb(127, 178, 204);
+}
+.list .groupNameOdd img, .list .groupNameEven img, .list .groupNameOddSelected img, .list .groupNameEvenSelected img {
+	margin: 3px 4px 0px 4px;
+	height: 11px;
+	width: 11px;
+	cursor: pointer;
+}
+.list img.gradebook {
+	margin: 2px 4px -2px;
+	height: 14px;
+	width: 11px;
+	cursor: default;
+}
+.list .testOdd, .list .testEven, .list .testOddSelected, .list .testEvenSelected {
+	border-style: solid;
+	border-width: 1px;
+	height: 18px;
+	overflow: hidden;
+	clear: left;
+}
+.list .testOdd {
+	border-color: rgb(229, 229, 229);
+	background-color: rgb(229, 229, 229);
+}
+.list .testEven {
+	border-color: rgb(255, 255, 255);
+	background-color: rgb(255, 255, 255);
+}
+.list .testOddSelected {
+	border-color: rgb(0, 102, 153);
+	background-color: rgb(114, 165, 191);
+	clear: left;
+}
+.list .testEvenSelected {
+	border-color: rgb(0, 102, 153);
+	background-color: rgb(127, 178, 204);
+	clear: left;
+}
+.list .testOdd img, .list .testEven img, .list .testOddSelected img, .list .testEvenSelected img {
+	margin: -1px 3px -1px 8px;
+	height: 16px;
+	width: 20px;
+	position: relative;
+	top: 2px;
+}
+.list .col1, .list .col2, .list .col3, .list .col4, .list .col5 {float:left}
+.list .testOdd .col1 .name, .list .testOdd .col2 .date, .list .testOdd .col3 .date, .list .testOdd .col4 .date, .list .testOdd .col5 .date { border-right: 1px solid white }
+.list .testOddSelected .col1 .name, .list .testOddSelected .col2 .date, .list .testOddSelected .col3 .date, .list .testOddSelected .col4 .date, .list .testOddSelected .col5 .date { border-right: 1px solid rgb(127, 178, 204) }
+.list .testGroup .testOdd .col1 .name, .list .testOdd .col1 .name { border-right: 1px solid white }
+.list .testGroup .testOddSelected .col1 .name, .list .testOddSelected .col1 .name { border-right: 1px solid rgb(127, 178, 204) }
+.list .testGroup .testOdd .col1 .name, .list .testGroup .testOddSelected .col1 .name { margin-left: 11px }
+.list .testOdd #column2 { border-right: 1px solid white }
+.list .testOddSelected #column2 { border-right: 1px solid rgb(127, 178, 204) }
+
+
+.list .groupNameOdd .col2, .list .testOdd .col2 .date, .list .testOdd .col3 .date, .list .testOdd .col4 .date, .list .testOdd .col5 .date {
+	border-right: 1px solid white;
+	text-align: right;
+	background-color: rgb(229, 229, 229);
+	position: relative;
+	z-index: 10;
+}
+.list .groupNameOddSelected .col2, .list .testOddSelected .col2 .date, .list .testOddSelected .col3 .date, .list .testOddSelected .col4 .date, .list .testOddSelected .col5 .date {
+	border-right: 1px solid rgb(127, 178, 204);
+	text-align: right;
+	color: rgb(72, 122, 148);
+	position: relative;
+	z-index: 9;
+}
+.list .testEven .col1 .name, .list .testEven .col2 .date, .list .testEven .col3 .date, .list .testEven .col4 .date, .list .testEven .col5 .date { border-right: 1px solid rgb(229, 229, 229) }
+.list .testEvenSelected .col1 .name, .list .testEvenSelected .col2 .date, .list .testEvenSelected .col3 .date, .list .testEvenSelected .col4 .date, .list .testEvenSelected .col5 .date { border-right: 1px solid rgb(114, 165, 191) }
+.list .testEven #column2 { border-right: 1px solid rgb(229, 229, 229) }
+.list .testEvenSelected #column2 { border-right: 1px solid rgb(114, 165, 191) }
+.list .testGroup .testEven .col1 .name, .list .testGroup .testEvenSelected .col1 .name { margin-left: 11px }
+.list .groupNameEven .col2, .list .testEven .col2 .date, .list .testEven .col3 .date, .list .testEven .col4 .date, .list .testEven .col5 .date {
+	text-align: right;
+	border-right: 1px solid rgb(229, 229, 229);
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	z-index: 10;
+}
+.list .groupNameEvenSelected .col2, .list .testEvenSelected .col2 .date, .list .testEvenSelected .col3 .date, .list .testEvenSelected .col4 .date, .list .testEvenSelected .col5 .date {
+	border-right: 1px solid rgb(114, 165, 191);
+	text-align: right;
+	color: rgb(72, 122, 148);
+	position: relative;
+	z-index: 9;
+}
+.selectListCaption {
+	font-size:80%;
+	margin-top:8px;
+}
+.additionalInfo {
+	border-style: solid;
+	border-color: rgb(246, 248, 248) rgb(199, 204, 205) rgb(181, 186, 187) rgb(235, 239, 239);
+	border-width: 1px;
+	padding: 1px;
+	font-size: 90%;
+	margin-top: 10px;
+	background-color: rgb(113, 116, 116);
+	position:relative;
+	display:none;
+}
+.additionalInfo .innerBox {
+	border-style: solid;
+	border-color: rgb(175, 178, 180) rgb(230, 232, 234) rgb(244, 245, 246) rgb(192, 196, 198);
+	border-width: 1px;
+	padding: 7px;
+	background-color: rgb(218, 222, 224);
+	position:relative;
+}
+.additionalInfo .restrictions { font-style: italic;
+	position:relative;
+}
+.additionalInfo p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	position:relative;
+}
+.searchfor {color:rgb(0,42,64); font-size: 90%}
+.searchbox {
+	margin-bottom:12px;
+}
+.searchMethods {
+	margin-bottom: 5px;
+}
+.searchMethods label {
+	display:block;
+}
+.searchMethods .moreOptions {
+	display:none;
+	margin-left:20px;
+	margin-bottom:8px;
+}

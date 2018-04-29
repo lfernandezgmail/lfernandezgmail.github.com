@@ -1,0 +1,355 @@
+.tabBox {
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top:3px;
+}
+ul.tabBoxTabs {
+	padding-bottom:1px;
+}
+.tabBox ul.tabBoxTabs {
+	text-align:center;
+	margin-left:1em;
+	margin-bottom:0;
+	padding-left:0;
+}
+ul.tabBoxTabs li {
+	color:white;
+	display:block;
+	float:left;
+	list-style-type:none;
+	padding:1px 0.6em 2px 0.6em;
+	margin:2px 1px 0px 1px;
+	border-top:1px solid rgb(205,221,229);
+	border-right:1px solid rgb(44,88,110);
+	border-left:1px solid rgb(93,144,170);
+	background-color:rgb(61,122,153);
+	white-space:nowrap;
+	cursor:pointer;
+}
+ul.tabBoxTabs li:hover {
+	color:rgb(153,179,194);
+	background-color:rgb(37,100,133);
+}
+ul.tabBoxTabs li.selected {
+	color:rgb(0,68,102);
+	text-shadow:grey 1px 1px 2px;
+	border-bottom-width:1px;
+	padding:1px 0.6em 4px 0.6em;
+	margin:0px 1px;
+	border-color:rgb(242,245,245) rgb(186,191,192) rgb(225,231,232) rgb(230,235,236);
+	background-color:rgb(225,231,232);
+	cursor:default;
+}
+div.tabContents {
+	clear:both;
+}
+div.parameter, div.parameterDisabled {
+	clear:left;
+	margin-bottom:1em;
+}
+div.parameterDisabled {
+	color: rgb(151,155,156);
+}
+div.tabSubmitButtons {
+	text-align: right;
+	text-align: left\9; /* IE8 and below */  
+	clear:both;
+	margin-bottom:4px;
+}
+
+.parameterLabel {
+	width:19%;
+	float:left;
+	text-align:right;
+	font-weight:bold;
+}
+.parameterContent {
+	margin-left:20%;
+}
+.parameterContent p {
+	margin:3px 0;
+}
+input.smallButton {
+	font-size:75%;
+}
+div.listAvailable {
+	width:37%;
+	float:left;
+}
+div.listActions {
+	margin-left:38%;
+	margin-right:38%;
+	padding-top:4em;
+}
+div.listAssociated {
+	width:37%;
+	float:right;
+}
+div.listActions input {
+	width:100%;
+}
+.lessImportant {
+	font-size:80%;
+	padding-left:25px;
+}
+div.moreOptions {
+	border-style: solid;
+	border-color: rgb(186, 191, 192) rgb(232, 237, 237) rgb(239, 243, 243) rgb(200, 206, 207);
+	border-width: 1px;
+	position: relative;
+	top: 8px;
+	left: 9px;
+	margin-right: 10px;
+}
+div.outerBorder {
+	border-style: solid;
+	border-color: rgb(186, 191, 192) rgb(232, 237, 237) rgb(239, 243, 243) rgb(200, 206, 207);
+	border-width: 1px;
+}
+div.innerBorder {
+	border-style: solid;
+	border-color: rgb(241, 244, 245) rgb(213, 218, 219) rgb(206, 211, 212) rgb(233, 237, 238);
+	border-width: 1px;
+}
+div.innerBorder span.title {
+	background-color: rgb(225, 231, 232);
+	padding-right: 10px;
+	padding-bottom: 3px;
+}
+div.moreOptions div.content {
+	margin:-10px 10px 3px -11px;
+}
+div.moreOptions span.title {
+	background-color: rgb(225, 231, 232);
+	padding-right: 10px;
+	padding-bottom: 3px;
+}
+div.moreOptions span.title input {
+	margin-right: 8px;
+}
+div.showMore {
+	margin-left: 15px;
+	margin-right:15px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+}
+div.lastModified {
+	float: right;
+	border-style: solid;
+	border-color: rgb(186, 191, 192) rgb(232, 237, 237) rgb(239, 243, 243) rgb(200, 206, 207);
+	border-width: 1px;
+}
+div.lastModified div.innerBorder {
+	font-size:75%;
+	padding:2px 1em;
+	background-color:rgb(218,223,224);
+}
+/*  sub-tabs  */
+div.tabContents ul.tabBoxTabs li, div.tabContent ul.tabBoxTabs li, #content ul.tabBoxTabs li {
+	border-top:1px solid rgb(174,195,205);
+	border-right:1px solid rgb(36,60,72);
+	border-left:1px solid rgb(122,155,172);
+	background-color:rgb(70,117,140);
+}
+div.tabContents ul.tabBoxTabs li:hover, div.tabContent ul.tabBoxTabs li:hover, #content ul.tabBoxTabs li:hover {
+	color:rgb(184,197,204);
+	background-color:rgb(46,92,115);
+}
+div.tabContents ul.tabBoxTabs li.selected, div.tabContent ul.tabBoxTabs li.selected, #content ul.tabBoxTabs li.selected {
+	color:rgb(0,68,102);
+	border-color:rgb(216,224,226) rgb(151,160,162) rgb(121,128,130) rgb(207,217,220);
+	background-color:rgb(197,209,212);
+}
+div.tabContents div.tabContents, div.tabContent div.tabContents, #content div.tabContents {
+	border-width:1px;
+	border-style:solid;
+	border-color:rgb(197,209,212) rgb(151,160,162) rgb(121,128,130) rgb(207,217,220);
+	background-color:rgb(197,209,212);
+	padding:0.75em 1em;
+	min-height: 200px;
+}
+.endTabContent { clear: both }
+/* wizard */
+div.wizard {
+	border-color: rgb(213,216,217) rgb(81,85,86) rgb(36,38,38) rgb(158,165,168);
+	clear:left;
+	width:75%;
+	background-color: rgb(158,165,168);
+	position:relative;
+	z-index:2;
+}
+ol.tabBoxTabs {
+	position: relative;
+	margin: 0px 0px 0px -40px;
+	float: right;
+	font-size: 80%;
+	list-style-position: outside;
+	padding-left: 0px;
+	width: 22%;
+}
+ol.tabBoxTabs li {
+	border-top: 1px solid rgb(186, 195, 200);
+	border-right: 1px solid rgb(49, 60, 66);
+	border-bottom: 1px solid rgb(22, 27, 29);
+	padding: 7px 2px 7px 12px;
+	background-color: rgb(96, 117, 128);
+	list-style-position: inside;
+	list-style-type: none;
+	margin-top: 0px;
+	position: relative;
+	z-index: 1;
+	color: rgb(255, 255, 255);
+	cursor:pointer;
+	left:-2px;
+}
+ol.tabBoxTabs li:hover {
+	color: rgb(153, 179, 194);
+	background-color: rgb(37, 100, 133);
+}
+ol.tabBoxTabs li.selected {
+	border-style:solid;
+	border-color:rgb(197,209,212) rgb(151,160,162) rgb(121,128,130) rgb(197,209,212);
+	background-color:rgb(197,209,212);
+	border-width:1px;
+	position: relative;
+	z-index: 3;
+	color: rgb(0, 68, 102);
+	cursor:default;
+	left:0px;
+	padding: 7px 2px 7px 10px;
+}
+ol.tabBoxTabs li.disabled, ol.tabBoxTabs li.disabled:hover {
+	background-color: rgb(96, 117, 128);
+	color: rgb(201, 201, 201);
+	cursor:default;
+}
+div.wizard label { display:block }
+div.wizard input[type=radio] {
+	margin:2px 1em;
+}
+
+/* new graphical tabs */
+.tabsBg {
+	position: absolute;
+	height: 29px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 2;
+	background-image: url(../images/interface/tabsBg.gif);
+	background-repeat: repeat-x;
+}
+.tabs {
+	position:relative;
+	top:-26px;
+	left:0px;
+	height:30px;
+	right:0px;
+	padding-left:8px;
+	z-index:10;
+}
+.tab {
+	float: left;
+	color: #332A1A;
+	font-family: Tahoma,Arial,sans-serif;
+	font-size: 15px;
+	height: 25px;
+	padding-top:2px;
+	padding-bottom:2px;
+	position:relative;
+	z-index:3;
+}
+.FL, .FR, .BL, .BR, .FI, .FD, .BI, .BD {
+	width: 16px;
+	background-repeat: no-repeat;
+}
+.F, .B, .over {
+	background-repeat: repeat-x;
+	padding-left:2px;
+	padding-right:2px;
+}
+.F { background-image: url(../images/interface/tabFBg.gif); cursor:default }
+.FL { background-image: url(../images/interface/tabFL.gif) }
+.FR { background-image: url(../images/interface/tabFR.gif) }
+.FI { background-image: url(../images/interface/tabFI.gif) }
+.FD { background-image: url(../images/interface/tabFD.gif) }
+.BL { background-image: url(../images/interface/tabBL.gif) }
+.BR { background-image: url(../images/interface/tabBR.gif) }
+.BI { background-image: url(../images/interface/tabBI.gif) }
+.BD { background-image: url(../images/interface/tabBD.gif) }
+.B, .over {
+	background-image: url(../images/interface/tabBBg.gif);
+	cursor: pointer;
+	height:25px;
+	padding-bottom:0px;
+	padding-top:4px;
+}
+.over { padding-top: 3px; padding-bottom:1px }
+.over a { color: rgb(255, 255, 153) }
+.tab a {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+.tab a:hover { color: rgb(255, 255, 153) }
+.tabContent {
+	font-family: Arial, Helvetica, sans-serif;
+	position:relative;
+	left:0px;
+	right:0px;
+	top:-20px;
+	padding:7px 2% 7px 2%;
+	clear:both;
+}
+
+/* new graphical subtabs */
+.tabContent .tabs {
+	position:relative;
+	clear:left;
+	top:3px;
+	left:0px;
+	padding-left:6px;
+	z-index:1;
+	width:69%;
+	margin-top:2px;
+}
+.tabContent .tabsBg {
+	background-image: url(../images/interface/tabs2Bg.gif);
+	position:absolute;
+	left:1px;
+	top:0px;
+	right:3px;
+	z-index:2;
+}
+.tabContent .tabContent {
+	position:relative;
+	top:0px;
+	width:65%;
+	clear:left;
+	float:left;
+	background-color: #C5CFD4;
+	border-bottom:1px solid #859299;
+	border-left:1px solid #DAE2E5;
+	border-right:1px solid #859299;
+}
+.tabContent .tabContent>div {
+	padding-top: 2px;
+}
+.tabContent .action {
+	margin-top:0px;
+	width:28.58%;
+}
+.tabContent .tab {
+	position:relative;
+	z-index:3;
+}
+.tabContent .F { background-image: url(../images/interface/tab2FBg.gif) }
+.tabContent .FL { background-image: url(../images/interface/tab2FL.gif) }
+.tabContent .FR { background-image: url(../images/interface/tab2FR.gif) }
+.tabContent .FI { background-image: url(../images/interface/tab2FI.gif) }
+.tabContent .FD { background-image: url(../images/interface/tab2FD.gif) }
+.tabContent .BL { background-image: url(../images/interface/tab2BL.gif) }
+.tabContent .BR { background-image: url(../images/interface/tab2BR.gif) }
+.tabContent .BI { background-image: url(../images/interface/tab2BI.gif) }
+.tabContent .BD { background-image: url(../images/interface/tab2BD.gif) }
+.tabContent .B, .tabContent .over { background-image: url(../images/interface/tab2BBg.gif) }
+.tabContent div.moreOptions span.title {background-color:#C5CFD4}
+
