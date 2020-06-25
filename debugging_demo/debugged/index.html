@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title>Debugged </title>
-  <link rel="stylesheet" type="text/css" href="styles.css" >
+  <title>DeBugged </title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-  <h1>Find the Bugs (Code WITHOUT Bugs)</h1>
-  <p>When first starting to use CSS students often have trouble getting their CSS to render.  Bugs can happen because of many reasons:</p>
-  <p>Because of syntactical mistakes in the declaration block.  The most common syntactical mistakes are using a parenthesis instead of a curly brace.  Or using a colon when a semi-colon is needed. Or vice versa.  Or leaving off a semi-colon entirely. Or forgetting to close a rule-set with a closing brace.  This last mistake will often corrupt css that is below it so it's especially costly</p>
-  <p>Because of syntactical mistakes in a selector.  The most common syntactical mistakes in selectors are forgetting to put a "." in front of a class or a "#" in front of an id.  Or inadvertently putting a "." or a "#" in the classname in the html.</p>
-  <p>Because the path in the link tag is wrong.</p>
-  <p>Below this paragraph the <a href="../bugged/index.html">unfixed version</a> should look like the pages on this <a href="../debugged/index.html">fixed version.</a>  See if you can find the bugs:</p>
+  <h1>Find the Bugs (Code Without Bugs)</h1>
+  <p>When first starting to use CSS students often have trouble getting their CSS to render. Bugs can happen because of
+    many reasons:</p>
+  <h3>Because of syntactical mistakes in the declaration block.</h3>
+  <p>The most common syntactical mistakes are using a parenthesis instead of a curly brace. Or using a colon when a
+    semi-colon is needed. Or vice versa. Or leaving off a semi-colon entirely. Or forgetting to close a rule-set with a
+    closing brace. This last mistake will often corrupt css that is below it so it's especially costly</p>
+  </p>
+  <h3>Because of syntactical mistakes in a selector.</h3>
+  <p> The most common syntactical mistakes in selectors are forgetting to put a "." in front of a class or a "#" in
+    front of an id. Or inadvertently putting a "." or a "#" in the classname in the html.</p>
+  <h3>Because the path in the link tag is wrong.</h3>
+  <p>If nothing is styling most likely it's because your haven't coded the path 
+    correctly in your link tag.
+  </p>
+  <h2>Exercise:</h2>
+  <p>Below this line is the  <a
+      href="../debugged/index.html">fixed CSS.</a> You can compare it to the <a href="../bugged/index.html">unfixed version</a>.</p>
+
   <p class="urgent">This text should be red.</p>
-  <p class="really-urgent">This text should be orange and twice the size of the red text.</p>      
-  <!-- The "#" was excised from most-urgent below -->
+  <p class="really-urgent">This text should be orange and twice the size of the red text.</p>
   <p id="most-urgent">This text should be orange and thrice the size of the red text</p>
   <p class="silver">This text should be silver</p>
   <p class="blue">This text should be blue</p>
   <p class="blue">This text should be blue</p>
 </body>
+
 </html>
